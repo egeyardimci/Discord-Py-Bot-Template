@@ -1,0 +1,6 @@
+discord
+discord.py
+beautifulsoup4
+urllib3
+requests
+Pillow
