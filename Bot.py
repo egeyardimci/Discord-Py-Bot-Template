@@ -2,7 +2,7 @@ import  discord
 from discord.ext import commands
 import settings
 
-client = commands.Bot(command_prefix= settings.prefix)
+client = commands.Bot(command_prefix= settings.Prefix)
 client.remove_command('help')
 
 @client.event
