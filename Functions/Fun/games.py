@@ -31,6 +31,7 @@ class Games(commands.Cog):
             img = Image.new('RGB', (1600, 80), color=(73, 109, 137))
 
             d = ImageDraw.Draw(img)
+            d = ImageDraw.Draw(img)
             from PIL import ImageFont
             fnt = ImageFont.truetype('arial.ttf', 38)
             d.text((20, 20), "{}".format(sentencetowrite), font=fnt, fill=(255, 255, 0))

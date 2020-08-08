@@ -37,7 +37,7 @@ class misc(commands.Cog):
                 count += 1
         word = count + 1
         letter = i + 1
-        await ctx.send("{}{}{}{}".format("Kelime sayisi : ", word, " Karakter sayisi : ", letter))
+        await ctx.send("{}{}{}{}".format("Word Count : ", word, " Letter Count : ", letter))
 
     @commands.command(pass_context=True)
     async def howoldiam(self,ctx,year):
