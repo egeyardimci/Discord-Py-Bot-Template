@@ -1,3 +1,7 @@
-TOKEN = 'Write Your Token'
+TOKEN = ''
 BotStatus = "Example Bot"
 Prefix = "."
+
+#For Twitch Data
+ClientID = ""
+OAuth = ""
