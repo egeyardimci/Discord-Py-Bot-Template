@@ -18,10 +18,10 @@ class admin(commands.Cog):
         author = ctx.message.author
         role_names = [role.name for role in author.roles]
         if "Admin" in role_names:
-            kisi = ctx.guild.members
-            for i in kisi:
+            members = ctx.guild.members
+            for i in members:
                 self.give_list.append(i)
-            kazanan = random.choice(self.give_list)
+            winner = random.choice(self.give_list)
             await ctx.send("{} {}".format("Winner : ", kazanan))
         else:
             await ctx.send("You don't have permission!")
