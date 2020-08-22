@@ -15,6 +15,6 @@ Now you can run the Bot.py file (Open a command prompt in the bot file and than 
 I use my api library for some twitch info and you should fill the ClientID and OAuth id in settings.py in order to use those commands.
 
 # Contributing The Project
-You can always pull request to this repo, if you report or fix a bug or if you add more commands to the template I'll be happy implement them.
+You can always pull request to this repo, if you report or fix a bug or if you add more commands to the template I'll be happy implement them. 
 
 
