@@ -22,7 +22,7 @@ class admin(commands.Cog):
             for i in members:
                 self.give_list.append(i)
             winner = random.choice(self.give_list)
-            await ctx.send("{} {}".format("Winner : ", kazanan))
+            await ctx.send("{} {}".format("Winner : ", winner))
         else:
             await ctx.send("You don't have permission!")
 
