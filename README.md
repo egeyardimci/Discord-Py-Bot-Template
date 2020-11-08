@@ -2,7 +2,7 @@
 Discord.py is a library that allows you to make discord bots with python. This repo is a template for the bot.
 
 # About The Bot
-Bot has  nearly10 functions by default you can expand them as you want.
+Bot has  over 10 functions by default you can expand them as you want.
 
 # Setup
 First of all you need to have the latest version of python (3.8) once you have that there is two ways to setup: <br />
