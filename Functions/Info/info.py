@@ -36,7 +36,6 @@ class info(commands.Cog):
         info_board.add_field(name=".coinflip", value="CoinFlip game.",inline=False)
         info_board.add_field(name=".joke", value="Makes a joke.", inline=False)
         info_board.add_field(name=".mirror", value="Bot mirrors your sentence.", inline=False)
-        info_board.add_field(name=".r6",value='Usage : .r6 (platform) (name) , Give your R6 stats.',inline=False)
         info_board.add_field(name=".giveaway", value='Only who has "Admin" role can use this command.',inline=False)
         info_board.add_field(name=".brokethesentence", value='Brokes the sentence.', inline=False)
         info_board.add_field(name=".lenght", value='Give you info about the sentence.', inline=False)
