@@ -7,12 +7,12 @@ class misc(commands.Cog):
         self.bot = bot
         self._last_member = None
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def wiki(self,ctx,msg):
         url = "https://tr.wikipedia.org/wiki/{}".format(msg)
         await ctx.send("Here : {}".format(url))
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def brokethesentence(self,ctx,sent):
         string = ctx.message.content[18:]
         vovels = ["a", "A", "e", "E", "u", "U", "o", "O", "i", "I"]
@@ -24,7 +24,7 @@ class misc(commands.Cog):
             k = k + 1
         await ctx.send("{}{}".format("The Broken Sentence: ", string))
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def lenght(self,ctx,sent):
         sentence = ctx.message.content[7:]
         print(sentence)
@@ -39,7 +39,7 @@ class misc(commands.Cog):
         letter = i + 1
         await ctx.send("{}{}{}{}".format("Word Count : ", word, " Letter Count : ", letter))
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def howoldiam(self,ctx,year):
         now = 2020
         author = ctx.author
