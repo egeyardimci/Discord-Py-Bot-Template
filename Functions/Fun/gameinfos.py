@@ -7,7 +7,7 @@ class GameI(commands.Cog):
         self.bot = bot
         self._last_member = None
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def minecraft(self,ctx, name):
         url = "https://tr.namemc.com/profile/{}.1".format(name)
         await ctx.send("{}{}".format("Your Minecraft Profile : ", url))
