@@ -4,4 +4,3 @@ beautifulsoup4
 urllib3
 requests
 Pillow
-TwitchApiPy
