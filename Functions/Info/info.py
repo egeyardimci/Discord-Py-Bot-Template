@@ -42,8 +42,6 @@ class info(commands.Cog):
         info_board.add_field(name=".minecraft", value='Shows your minecraft profile.', inline=False)
         info_board.add_field(name=".writinggame", value='Game for fast writing.', inline=False)
         info_board.add_field(name=".wiki", value='Send you the wiki link of requested thing.', inline=False)
-        info_board.add_field(name=".TwitchChannelInfo <name>", value='Sends you the channel info of the streamer.', inline=False)
-        info_board.add_field(name=".TwitchFollowerCount <name>", value='Sends you the follower count of the streamer.', inline=False)
         await ctx.send(embed=info_board)
 
 def setup(bot):
