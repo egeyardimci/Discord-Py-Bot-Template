@@ -7,7 +7,7 @@ class fun(commands.Cog):
         self.bot = bot
         self._last_member = None
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def joke(self,ctx):
         jokes = ["joke1", "joke2"]
         selectjoke = random.choice(jokes)
