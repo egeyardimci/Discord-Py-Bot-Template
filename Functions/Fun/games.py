@@ -19,7 +19,7 @@ class Games(commands.Cog):
     Sentences = ["sent1","sent2","sent3"]
     sentencetowrite = ""
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def writinggame(self,ctx):
         self.isgameactive
         if (self.isgameactive == 0):
@@ -44,7 +44,7 @@ class Games(commands.Cog):
             await ctx.send("Game is being played now!")
 
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def coinflip(self,ctx):
         x = random.randint(1, 2)
         if (x == 1):
