@@ -4,6 +4,8 @@ from TwitchApiPy import TwitchApiPy
 from discord.ext import commands
 import settings
 
+#This Cog is not being use for now due to an issue
+
 class Twitch(commands.Cog,TwitchApiPy):
     def __init__(self, bot):
         self.bot = bot
