@@ -7,7 +7,7 @@ class info(commands.Cog):
         self.bot = bot
         self._last_member = None
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def info(self,ctx):
         info_board = discord.Embed(
             title="BotName",
@@ -19,11 +19,11 @@ class info(commands.Cog):
         info_board.add_field(name="Commands", value="Type .help for commands.", inline=True)
         await ctx.send(embed=info_board)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def avatar(self,ctx):
         await ctx.send(ctx.author.avatar_url)
 
-    @commands.command(pass_context=True)
+    @commands.command()
     async def help(self,ctx):
         info_board = discord.Embed(
             title="BotName",
