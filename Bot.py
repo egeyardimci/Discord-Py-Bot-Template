@@ -5,11 +5,8 @@ intents = discord.Intents.default()
 
 cogs = ["Functions.Fun.games","Functions.Fun.gameinfos","Functions.Fun.otherfuncommands","Functions.Info.info","Functions.Misc.misc","Functions.NewMember.newmember","Functions.Admin.admin"]
 
-client = commands.Bot(command_prefix= settings.Prefix, intents=intents)
-client.remove_command('help')
+client = commands.Bot(command_prefix= settings.Prefix, help_command=None, intents=intents)
 
-
-#everything in on_ready.
 @client.event
 async def on_ready():
     print("Bot is ready!")
