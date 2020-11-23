@@ -18,7 +18,7 @@ class admin(commands.Cog):
         for i in members:
             self.give_list.append(i)
         winner = random.choice(self.give_list)
-        await ctx.send("{} {}".format("Winner : ", winner))
+        await ctx.send(f"Winner: {winner}")
 
 def setup(bot):
     bot.add_cog(admin(bot))
