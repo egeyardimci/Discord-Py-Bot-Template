@@ -1,6 +1,8 @@
 import  discord
 import random
 from discord.ext import commands
+from discord.ext.commands import has_permissions, CheckFailure
+
 
 class admin(commands.Cog):
     def __init__(self, bot):
@@ -8,23 +10,15 @@ class admin(commands.Cog):
         self._last_member = None
 
 
-    """
-    YOU SHOULD GIVE YOUR SELF A ROLE NAMED ADMIN TO USE THIS LIKE THAT OR YOU CAN EDIT THE CODE AND DO IT BY PERMISSIONS.
-    """
-
     give_list =[]
-    @commands.command(pass_context=True)
+    @commands.command()
+    @has_permissions(administrator=True)
     async def giveaway(self,ctx):
-        author = ctx.message.author
-        role_names = [role.name for role in author.roles]
-        if "Admin" in role_names:
-            members = ctx.guild.members
-            for i in members:
-                self.give_list.append(i)
-            winner = random.choice(self.give_list)
-            await ctx.send("{} {}".format("Winner : ", winner))
-        else:
-            await ctx.send("You don't have permission!")
+        members = ctx.guild.members
+        for i in members:
+            self.give_list.append(i)
+        winner = random.choice(self.give_list)
+        await ctx.send("{} {}".format("Winner : ", winner))
 
 def setup(bot):
     bot.add_cog(admin(bot))
