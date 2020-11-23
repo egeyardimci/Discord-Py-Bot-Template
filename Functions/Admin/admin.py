@@ -1,24 +1,23 @@
-import  discord
 import random
+
 from discord.ext import commands
-from discord.ext.commands import has_permissions, CheckFailure
 
 
 class admin(commands.Cog):
+
     def __init__(self, bot):
         self.bot = bot
-        self._last_member = None
 
-
-    give_list =[]
     @commands.command()
-    @has_permissions(administrator=True)
-    async def giveaway(self,ctx):
-        members = ctx.guild.members
-        for i in members:
-            self.give_list.append(i)
-        winner = random.choice(self.give_list)
-        await ctx.send(f"Winner: {winner}")
+    @commands.has_permissions(administrator=True)
+    @commands.guild_only()
+    async def giveaway(self, ctx):
+        """
+        Picks a random user from the server to win your giveaway.
+        """
+
+        winner = random.choice(ctx.guild.members)
+        await ctx.send(f"Winner: {winner.mention}")
 
 def setup(bot):
     bot.add_cog(admin(bot))
