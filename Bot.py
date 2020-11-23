@@ -1,4 +1,4 @@
-import  discord
+import discord
 from discord.ext import commands
 import settings
 intents = discord.Intents.default()
@@ -11,8 +11,13 @@ client = commands.Bot(command_prefix= settings.Prefix, help_command=None, intent
 async def on_ready():
     print("Bot is ready!")
     await client.change_presence(status=discord.Status.online,activity=discord.Game(settings.BotStatus))
-    for i in cogs:
-        client.load_extension(i)
-        print("Loaded ",i)
+    for cog in cogs:
+        try:
+            print("Loading cog {}".format(cog))
+            client.load_extension(cog)
+            print("Loaded cog {}".format(cog))
+        except Exception as e:
+            exc = "{}: {}".format(type(e).__name__, e)
+            print("Failed to load cog {}\n{}".format(cog, exc))
 
 client.run(settings.TOKEN)
