@@ -25,7 +25,7 @@ class misc(commands.Cog):
         await ctx.send("{}{}".format("The Broken Sentence: ", string))
 
     @commands.command()
-    async def lenght(self,ctx,sent):
+    async def length(self,ctx,sent):
         sentence = ctx.message.content[7:]
         print(sentence)
         uzunluk = len(sentence)
