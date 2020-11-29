@@ -19,5 +19,6 @@ class admin(commands.Cog):
         winner = random.choice(ctx.guild.members)
         await ctx.send(f"Winner: {winner.mention}")
 
+
 def setup(bot):
     bot.add_cog(admin(bot))

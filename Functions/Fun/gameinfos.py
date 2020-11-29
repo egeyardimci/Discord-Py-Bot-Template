@@ -1,6 +1,7 @@
-import  discord
+import discord
 import random
 from discord.ext import commands
+
 
 class GameI(commands.Cog):
     def __init__(self, bot):
@@ -8,15 +9,23 @@ class GameI(commands.Cog):
         self._last_member = None
 
     @commands.command()
-    async def minecraft(self,ctx, name):
+    async def minecraft(self, ctx, name):
         url = "https://tr.namemc.com/profile/{}.1".format(name)
         await ctx.send("{}{}".format("Your Minecraft Profile : ", url))
         minecraft_table = discord.Embed(
             title="BotName",
             colour=discord.Colour.gold()
         )
-        minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Higher",value='/give @p minecraft:player_head{p1}SkullOwner:"{name}"{p2}'.format(p1="{", name=name,p2="}"),inline=False)
-        minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Lower",value='/give @p minecraft:skull 1 3 {p1}SkullOwner:"{name}"{p2}'.format(p1="{", name=name,p2="}"),inline=False)
+        minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Higher",
+                                  value='/give @p minecraft:player_head{p1}SkullOwner:"{name}"{p2}'.format(p1="{",
+                                                                                                           name=name,
+                                                                                                           p2="}"),
+                                  inline=False)
+        minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Lower",
+                                  value='/give @p minecraft:skull 1 3 {p1}SkullOwner:"{name}"{p2}'.format(p1="{",
+                                                                                                          name=name,
+                                                                                                          p2="}"),
+                                  inline=False)
         await ctx.send(embed=minecraft_table)
 
 

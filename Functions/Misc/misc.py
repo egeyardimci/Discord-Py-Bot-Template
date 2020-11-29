@@ -1,6 +1,5 @@
-import  discord
-import random
 from discord.ext import commands
+
 
 class misc(commands.Cog):
     def __init__(self, bot):
@@ -8,12 +7,12 @@ class misc(commands.Cog):
         self._last_member = None
 
     @commands.command()
-    async def wiki(self,ctx,msg):
+    async def wiki(self, ctx, msg):
         url = "https://tr.wikipedia.org/wiki/{}".format(msg)
         await ctx.send("Here : {}".format(url))
 
     @commands.command()
-    async def brokethesentence(self,ctx,sent):
+    async def brokethesentence(self, ctx, sent):
         string = ctx.message.content[18:]
         vovels = ["a", "A", "e", "E", "u", "U", "o", "O", "i", "I"]
         k = -1
@@ -25,7 +24,7 @@ class misc(commands.Cog):
         await ctx.send("{}{}".format("The Broken Sentence: ", string))
 
     @commands.command()
-    async def length(self,ctx,sent):
+    async def length(self, ctx, sent):
         sentence = ctx.message.content[7:]
         print(sentence)
         uzunluk = len(sentence)
@@ -40,7 +39,7 @@ class misc(commands.Cog):
         await ctx.send("{}{}{}{}".format("Word Count : ", word, " Letter Count : ", letter))
 
     @commands.command()
-    async def howoldiam(self,ctx,year):
+    async def howoldiam(self, ctx, year):
         now = 2020
         author = ctx.author
         print(author)
