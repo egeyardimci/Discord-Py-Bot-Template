@@ -25,7 +25,7 @@ class Games(commands.Cog):
     @commands.command()
     async def writinggame(self, ctx):
         self.isgameactive
-        if (self.isgameactive == 0):
+        if self.isgameactive == 0:
             await ctx.send("Sentence you need to write : ")
             global sentencetowrite
             sentencetowrite = self.Sentences[random.randint(0, len(self.Sentences))]
@@ -48,11 +48,7 @@ class Games(commands.Cog):
 
     @commands.command()
     async def coinflip(self, ctx):
-        x = random.randint(1, 2)
-        if x == 1:
-            await ctx.send("Heads")
-        else:
-            await ctx.send("Tails")
+        await ctx.send("Heads" if random.randint(1, 2) == 1 else "Tails")
 
 
 def setup(bot):

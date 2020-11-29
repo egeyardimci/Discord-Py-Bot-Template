@@ -1,5 +1,4 @@
 import discord
-import random
 from discord.ext import commands
 
 
@@ -11,7 +10,7 @@ class GameI(commands.Cog):
     @commands.command()
     async def minecraft(self, ctx, name):
         url = "https://tr.namemc.com/profile/{}.1".format(name)
-        await ctx.send("{}{}".format("Your Minecraft Profile : ", url))
+        await ctx.send(f"Your Minecraft profile : {url}")
         minecraft_table = discord.Embed(
             title="BotName",
             colour=discord.Colour.gold()

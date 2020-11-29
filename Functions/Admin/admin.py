@@ -15,9 +15,7 @@ class admin(commands.Cog):
         """
         Picks a random user from the server to win your giveaway.
         """
-
-        winner = random.choice(ctx.guild.members)
-        await ctx.send(f"Winner: {winner.mention}")
+        await ctx.send(f"Winner: {random.choice(ctx.guild.members).mention}")
 
 
 def setup(bot):

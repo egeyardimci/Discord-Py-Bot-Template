@@ -12,8 +12,10 @@ class fun(commands.Cog):
 
     @commands.command()
     async def joke(self, ctx):
-        jokes = ["joke1", "joke2"]
-        selectjoke = random.choice(jokes)
+        selectjoke = random.choice([
+            "joke1",
+            "joke2"
+        ])
         await ctx.send(selectjoke)
 
     @commands.command()
