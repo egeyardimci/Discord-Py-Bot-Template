@@ -27,10 +27,10 @@ class misc(commands.Cog):
     async def length(self, ctx, sent):
         sentence: str = ctx.message.content[7:]
         print(sentence)
-        uzunluk: int = len(sentence)
+        lenght: int = len(sentence)
         i = 0
         count: int = 0
-        while i < uzunluk - 1:
+        while i < lenght - 1:
             i += 1
             if sentence[i] == " ":
                 count += 1
@@ -49,8 +49,8 @@ class misc(commands.Cog):
             await ctx.send("Please write your birth year.")
         try:
             if 0 < b_year < now:
-                yas = now - b_year
-                await ctx.send("f{yas} is your age")
+                age = now - b_year
+                await ctx.send("f{age} is your age")
             else:
                 await ctx.send("Error.")
         except TypeError:
