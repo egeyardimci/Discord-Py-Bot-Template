@@ -1,6 +1,5 @@
-import  discord
-import random
 from discord.ext import commands
+
 
 class misc(commands.Cog):
     def __init__(self, bot):
@@ -8,40 +7,40 @@ class misc(commands.Cog):
         self._last_member = None
 
     @commands.command()
-    async def wiki(self,ctx,msg):
-        url = "https://tr.wikipedia.org/wiki/{}".format(msg)
-        await ctx.send("Here : {}".format(url))
+    async def wiki(self, ctx, msg):
+        url: str = f"https://tr.wikipedia.org/wiki/{msg}"
+        await ctx.send(f"Here : {url}")
 
     @commands.command()
-    async def brokethesentence(self,ctx,sent):
-        string = ctx.message.content[18:]
-        vovels = ["a", "A", "e", "E", "u", "U", "o", "O", "i", "I"]
-        k = -1
+    async def brokethesentence(self, ctx, sent):
+        string: str = ctx.message.content[18:]
+        vovels: list = ["a", "A", "e", "E", "u", "U", "o", "O", "i", "I"]
+        k: int = -1
         while k < len(string) - 1:
             for i in vovels:
                 if string[k] == i:
                     string = string.replace(string[k], "")
-            k = k + 1
-        await ctx.send("{}{}".format("The Broken Sentence: ", string))
+            k += 1
+        await ctx.send(f"The Broken Sentence {string}")
 
     @commands.command()
-    async def length(self,ctx,sent):
-        sentence = ctx.message.content[7:]
+    async def length(self, ctx, sent):
+        sentence: str = ctx.message.content[7:]
         print(sentence)
-        uzunluk = len(sentence)
+        uzunluk: int = len(sentence)
         i = 0
-        count = 0
+        count: int = 0
         while i < uzunluk - 1:
-            i = i + 1
+            i += 1
             if sentence[i] == " ":
                 count += 1
         word = count + 1
         letter = i + 1
-        await ctx.send("{}{}{}{}".format("Word Count : ", word, " Letter Count : ", letter))
+        await ctx.send(f"World count : {word}, letter count : {letter}")
 
     @commands.command()
-    async def howoldiam(self,ctx,year):
-        now = 2020
+    async def howoldiam(self, ctx, year):
+        now: int = 2020
         author = ctx.author
         print(author)
         try:
@@ -49,10 +48,9 @@ class misc(commands.Cog):
         except ValueError:
             await ctx.send("Please write your birth year.")
         try:
-            if b_year > 0 and b_year < now:
+            if 0 < b_year < now:
                 yas = now - b_year
-                await ctx.send("{}{}".format(yas, " is your age."))
-
+                await ctx.send("f{yas} is your age")
             else:
                 await ctx.send("Error.")
         except TypeError:

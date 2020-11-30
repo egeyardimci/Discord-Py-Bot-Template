@@ -1,12 +1,15 @@
-import  discord
-import random
 from TwitchApiPy import TwitchApiPy
 from discord.ext import commands
 import settings
+from TwitchApiPy import TwitchApiPy
+from discord.ext import commands
 
-#This Cog is not being use for now due to an issue
+import settings
 
-class Twitch(commands.Cog,TwitchApiPy):
+
+# This Cog is not being use for now due to an issue
+
+class Twitch(commands.Cog, TwitchApiPy):
     def __init__(self, bot):
         self.bot = bot
         self._last_member = None
@@ -16,18 +19,18 @@ class Twitch(commands.Cog,TwitchApiPy):
     api.OAuth = settings.OAuth
 
     @commands.command(pass_context=True)
-    async def TwitchFollower(self,ctx,name):
+    async def TwitchFollower(self, ctx, name):
         Count = self.api.GetFollowerCount(name)
-        await ctx.send("{}{} : {}".format("Follower count of ",name, Count))
+        await ctx.send("{}{} : {}".format("Follower count of ", name, Count))
 
     @commands.command(pass_context=True)
-    async def TwitchChannelInfo(self,ctx,name):
+    async def TwitchChannelInfo(self, ctx, name):
         info = self.api.GetChannelInfo(name)
         info2 = self.api.GetChannelStatus(name)
-        text =  ("Channel name : {} , Last Played Game : {} , Last Streams Title : {} , Is Live : {} , Language : {}").format(info["name"],info["game"],info["title"],info2["islive"],info2["language"])
+        text = (
+            "Channel name : {} , Last Played Game : {} , Last Streams Title : {} , Is Live : {} , Language : {}").format(
+            info["name"], info["game"], info["title"], info2["islive"], info2["language"])
         await ctx.send(text)
-
-
 
 
 def setup(bot):
