@@ -40,7 +40,7 @@ class misc(commands.Cog):
 
     @commands.command()
     async def howoldiam(self, ctx, year):
-        now: int = 2020
+        now: int = 2021
         author = ctx.author
         print(author)
         try:
