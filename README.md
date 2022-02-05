@@ -14,7 +14,7 @@ Discord.py is a library that allows you to make discord bots with python and thi
 > The code written in this project was in my very early times of coding so don't rely on its organization and code layout.
 
 > I will be relasing a comprehensive update about the file organization and clean code when i have the time for it.
-## Setup
+# Setup
 
 Bot requires [Python 3](https://www.python.org/) to run.
 
@@ -38,7 +38,7 @@ BotStatus = "Example Bot"
 Prefix = "."
 ```
 
-## How to run
+# How to run
 The bot can be started with a python command:
 ```sh
 python Bot.py
