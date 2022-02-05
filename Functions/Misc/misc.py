@@ -1,7 +1,7 @@
 from discord.ext import commands
 
 
-class misc(commands.Cog):
+class Misc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self._last_member = None
@@ -40,7 +40,7 @@ class misc(commands.Cog):
 
     @commands.command()
     async def howoldiam(self, ctx, year):
-        now: int = 2021
+        now: int = 2022
         author = ctx.author
         print(author)
         try:
@@ -58,4 +58,4 @@ class misc(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(misc(bot))
+    bot.add_cog(Misc(bot))
