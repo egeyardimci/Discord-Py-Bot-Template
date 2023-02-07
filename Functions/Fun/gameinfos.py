@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 
-
 class GameInfo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -17,8 +16,9 @@ class GameInfo(commands.Cog):
             colour=discord.Colour.gold()
         )
         
-        minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Higher",value='/give @p minecraft:player_head{p1}SkullOwner:"{name}"{p2}'.format(p1="{",name=name,p2="}"),inline=False)
-        minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Lower",value='/give @p minecraft:skull 1 3 {p1}SkullOwner:"{name}"{p2}'.format(p1="{",name=name,p2="}"),inline=False)
+        p1, p2 = '{', '}'
+        minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Higher",value=f'/give @p minecraft:player_head{p1}SkullOwner:"{name}"{p2}',inline=False)
+        minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Lower",value=f'/give @p minecraft:skull 1 3 {p1}SkullOwner:"{name}"{p2}',inline=False)
         await ctx.send(embed=minecraft_table)
 
 def setup(bot):
