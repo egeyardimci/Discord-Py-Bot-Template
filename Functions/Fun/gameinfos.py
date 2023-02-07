@@ -4,11 +4,10 @@ from discord.ext import commands
 class GameInfo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self._last_member = None
 
     @commands.command()
     async def minecraft(self, ctx, name):
-        url = "https://namemc.com/profile/{}.1".format(name)
+        url = f"https://namemc.com/profile/{name}.1"
         await ctx.send(f"Your Minecraft profile : {url}")
         
         minecraft_table = discord.Embed(
