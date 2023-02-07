@@ -9,7 +9,7 @@ class GameInfo(commands.Cog):
 
     @commands.command()
     async def minecraft(self, ctx, name):
-        url = "https://tr.namemc.com/profile/{}.1".format(name)
+        url = "https://namemc.com/profile/{}.1".format(name)
         await ctx.send(f"Your Minecraft profile : {url}")
         
         minecraft_table = discord.Embed(
