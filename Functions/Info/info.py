@@ -11,11 +11,11 @@ class Info(commands.Cog):
     async def info(self, ctx):
         info_board = discord.Embed(
             title="BotName",
-            description="This bot made with xegepa bot template.",
+            description="This bot made with the egeyardimci bot template.",
             colour=discord.Colour.red()
         )
         info_board.set_footer(text="BotName")
-        info_board.set_author(name="xegepa")
+        info_board.set_author(name="egeyardimci")
         info_board.add_field(name="Commands", value="Type .help for commands.", inline=True)
         await ctx.send(embed=info_board)
 
@@ -30,7 +30,7 @@ class Info(commands.Cog):
             colour=discord.Colour.blue()
         )
         info_board.set_footer(text="BotName")
-        info_board.set_author(name="xegepa")
+        info_board.set_author(name="egeyardimci")
         info_board.add_field(name=".avatar", value="Shows your avatar.", inline=False)
         info_board.add_field(name=".info", value="Info about bot.", inline=False)
         info_board.add_field(name=".coinflip", value="CoinFlip game.", inline=False)
