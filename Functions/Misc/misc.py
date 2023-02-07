@@ -8,7 +8,7 @@ class Misc(commands.Cog):
 
     @commands.command()
     async def wiki(self, ctx, msg):
-        url: str = f"https://tr.wikipedia.org/wiki/{msg}"
+        url: str = f"https://en.wikipedia.org/wiki/{msg}"
         await ctx.send(f"Here : {url}")
 
     @commands.command()
@@ -40,7 +40,7 @@ class Misc(commands.Cog):
 
     @commands.command()
     async def howoldiam(self, ctx, year):
-        now: int = 2022
+        now: int = 2023
         author = ctx.author
         print(author)
         try:
