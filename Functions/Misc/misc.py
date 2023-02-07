@@ -1,10 +1,9 @@
 from discord.ext import commands
-
+import datetime
 
 class Misc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self._last_member = None
 
     @commands.command()
     async def wiki(self, ctx, msg):
@@ -40,7 +39,7 @@ class Misc(commands.Cog):
 
     @commands.command()
     async def howoldiam(self, ctx, year):
-        now: int = 2023
+        now: int = datetime.date.today().year
         author = ctx.author
         print(author)
         try:
@@ -50,7 +49,7 @@ class Misc(commands.Cog):
         try:
             if 0 < b_year < now:
                 age = now - b_year
-                await ctx.send("f{age} is your age")
+                await ctx.send(f"{age} is your age")
             else:
                 await ctx.send("Error.")
         except TypeError:
