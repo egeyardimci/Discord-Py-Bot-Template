@@ -30,7 +30,7 @@ class Info(commands.Cog):
             colour=discord.Colour.blue()
         )
         info_board.set_footer(text="BotName")
-        info_board.set_author(name="egeyardimci")
+        info_board.set_author(name="xegepa")
         info_board.add_field(name=".avatar", value="Shows your avatar.", inline=False)
         info_board.add_field(name=".info", value="Info about bot.", inline=False)
         info_board.add_field(name=".coinflip", value="CoinFlip game.", inline=False)
