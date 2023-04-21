@@ -1,0 +1,7 @@
+version: "0.1"
+
+services:
+  bot:
+    image: "bot:latest"
+    container_name: "bot"
+    restart: always
