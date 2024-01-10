@@ -1,7 +1,5 @@
-import random
-
 from discord.ext import commands
-
+import random
 
 class Admin(commands.Cog):
 
@@ -16,7 +14,6 @@ class Admin(commands.Cog):
         Picks a random user from the server to win your giveaway.
         """
         await ctx.send(f"Winner: {random.choice(ctx.guild.members).mention}")
-
 
 def setup(bot):
     bot.add_cog(Admin(bot))

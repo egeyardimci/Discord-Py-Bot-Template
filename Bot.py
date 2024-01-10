@@ -10,7 +10,6 @@ cogs: list = ["Functions.Fun.games", "Functions.Fun.gameinfos", "Functions.Fun.o
 
 client = commands.Bot(command_prefix=settings.Prefix, help_command=None, intents=intents)
 
-
 @client.event
 async def on_ready():
     print("Bot is ready!")
@@ -19,10 +18,10 @@ async def on_ready():
         try:
             print(f"Loading cog {cog}")
             client.load_extension(cog)
-            print(f"Loaded cog {cog}")
         except Exception as e:
             exc = "{}: {}".format(type(e).__name__, e)
             print("Failed to load cog {}\n{}".format(cog, exc))
-
+        else:
+            print(f"Loaded cog {cog}")
 
 client.run(settings.TOKEN)
