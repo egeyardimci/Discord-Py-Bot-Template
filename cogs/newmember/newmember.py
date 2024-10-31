@@ -10,7 +10,7 @@ class Welcome(commands.Cog):
     async def on_member_join(self, member):
         channel = member.guild.system_channel
         if channel is not None:
-            await channel.send('Welcome to the server {0.mention}.'.format(member))
+            await channel.send(f"Welcome to the server {member.mention}.")
 
 
 def setup(bot):

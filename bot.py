@@ -5,10 +5,11 @@ import settings
 
 intents = discord.Intents.default()
 
-cogs: list = ["Functions.Fun.games", "Functions.Fun.gameinfos", "Functions.Fun.otherfuncommands", "Functions.Info.info",
-        "Functions.Misc.misc", "Functions.NewMember.newmember", "Functions.Admin.admin"]
+cogs: list = ["cogs.fun.games", "cogs.fun.gameinfos", "cogs.fun.otherfuncommands", "cogs.info.info",
+              "cogs.misc.misc", "cogs.newmember.newmember", "cogs.admin.admin"]
 
 client = commands.Bot(command_prefix=settings.Prefix, help_command=None, intents=intents)
+
 
 @client.event
 async def on_ready():
@@ -17,11 +18,12 @@ async def on_ready():
     for cog in cogs:
         try:
             print(f"Loading cog {cog}")
-            client.load_extension(cog)
+            await client.load_extension(cog)
         except Exception as e:
             exc = "{}: {}".format(type(e).__name__, e)
             print("Failed to load cog {}\n{}".format(cog, exc))
         else:
             print(f"Loaded cog {cog}")
+
 
 client.run(settings.TOKEN)

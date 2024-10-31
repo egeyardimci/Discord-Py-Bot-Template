@@ -1,7 +1,5 @@
 import random
 from discord.ext import commands
-import random
-from discord.ext import commands
 
 
 class Fun(commands.Cog):
@@ -11,15 +9,15 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def joke(self, ctx):
-        selectjoke = random.choice([
+        select_joke = random.choice([
             "joke1",
             "joke2"
         ])
-        await ctx.send(selectjoke)
+        await ctx.send(select_joke)
 
     @commands.command()
-    async def mirror(self, ctx, message):
-        await ctx.send(message)
+    async def mirror(self, ctx, *, msg):
+        await ctx.send(msg)
 
 
 def setup(bot):
