@@ -50,5 +50,5 @@ class Games(commands.Cog):
         await ctx.send("Heads" if random.randint(1, 2) == 1 else "Tails")
 
 
-def setup(bot):
-    bot.add_cog(Games(bot))
+async def setup(bot):
+    await bot.add_cog(Games(bot))

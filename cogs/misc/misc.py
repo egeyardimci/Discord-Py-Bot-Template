@@ -49,5 +49,5 @@ class Misc(commands.Cog):
             await ctx.send("Please write your birth year.")
 
 
-def setup(bot):
-    bot.add_cog(Misc(bot))
+async def setup(bot):
+    await bot.add_cog(Misc(bot))

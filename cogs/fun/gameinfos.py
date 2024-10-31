@@ -27,5 +27,5 @@ class GameInfos(commands.Cog):
         await ctx.send(embed=minecraft_table)
 
 
-def setup(bot):
-    bot.add_cog(GameInfos(bot))
+async def setup(bot):
+    await bot.add_cog(GameInfos(bot))

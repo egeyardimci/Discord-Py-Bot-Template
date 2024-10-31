@@ -9,6 +9,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def info(self, ctx):
+        print("init")
         info_board = discord.Embed(
             title="BotName",
             description="This bot made with the egeyardimci bot template.",
@@ -45,5 +46,5 @@ class Info(commands.Cog):
         await ctx.send(embed=info_board)
 
 
-def setup(bot):
-    bot.add_cog(Info(bot))
+async def setup(bot):
+    await bot.add_cog(Info(bot))
