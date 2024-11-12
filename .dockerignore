@@ -1,0 +1,6 @@
+setup.bat
+.dockerignore
+.gitignore
+.gitattributes
+Dockerfile
+README.md
