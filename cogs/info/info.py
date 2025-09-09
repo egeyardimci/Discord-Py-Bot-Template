@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 
-
 class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -44,7 +43,6 @@ class Info(commands.Cog):
         info_board.add_field(name=".writinggame", value='Game for fast writing.', inline=False)
         info_board.add_field(name=".wiki", value='Send you the wiki link of requested thing.', inline=False)
         await ctx.send(embed=info_board)
-
 
 async def setup(bot):
     await bot.add_cog(Info(bot))

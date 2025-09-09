@@ -1,15 +1,11 @@
 import discord
 from discord.ext import commands
-
 import settings
 
 intents = discord.Intents.all()
-
 cogs: list = ["cogs.fun.games", "cogs.fun.gameinfos", "cogs.fun.otherfuncommands", "cogs.info.info",
               "cogs.misc.misc", "cogs.newmember.newmember", "cogs.admin.admin"]
-
 client = commands.Bot(command_prefix=settings.Prefix, help_command=None, intents=intents)
-
 
 @client.event
 async def on_ready():
@@ -23,7 +19,6 @@ async def on_ready():
             print("Failed to load cog {}\n{}".format(cog, exc))
         else:
             print(f"Loaded cog {cog}")
-
     print("Bot is ready!")
 
 client.run(settings.TOKEN)

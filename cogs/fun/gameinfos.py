@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 
-
 class GameInfos(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -25,7 +24,6 @@ class GameInfos(commands.Cog):
         minecraft_table.add_field(name="Skull Code Minecraft 1.13 And Lower",
                                   value=f'/give @p minecraft:skull 1 3 {p1}SkullOwner:"{name}"{p2}', inline=False)
         await ctx.send(embed=minecraft_table)
-
 
 async def setup(bot):
     await bot.add_cog(GameInfos(bot))

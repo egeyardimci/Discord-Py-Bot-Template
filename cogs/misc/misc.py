@@ -1,7 +1,6 @@
 from discord.ext import commands
 import datetime
 
-
 class Misc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -47,7 +46,6 @@ class Misc(commands.Cog):
                 await ctx.send("You seem not to be born...")
         except TypeError:
             await ctx.send("Please write your birth year.")
-
 
 async def setup(bot):
     await bot.add_cog(Misc(bot))

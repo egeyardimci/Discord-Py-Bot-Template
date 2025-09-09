@@ -1,15 +1,12 @@
 import random
 from PIL import Image, ImageDraw
 from PIL import ImageFont
-
 import discord
 from discord.ext import commands
 
 """
 Implements a basic fast writing game with images.
 """
-
-
 class Games(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -48,7 +45,6 @@ class Games(commands.Cog):
     @commands.command()
     async def coinflip(self, ctx):
         await ctx.send("Heads" if random.randint(1, 2) == 1 else "Tails")
-
 
 async def setup(bot):
     await bot.add_cog(Games(bot))

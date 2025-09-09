@@ -1,7 +1,6 @@
 import random
 from discord.ext import commands
 
-
 class Fun(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -18,7 +17,6 @@ class Fun(commands.Cog):
     @commands.command()
     async def mirror(self, ctx, *, msg):
         await ctx.send(msg)
-
 
 async def setup(bot):
     await bot.add_cog(Fun(bot))
