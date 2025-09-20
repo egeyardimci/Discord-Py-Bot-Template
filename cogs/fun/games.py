@@ -31,7 +31,11 @@ class Games(commands.Cog):
             img = Image.new('RGB', (1600, 80), color=(73, 109, 137))
             d = ImageDraw.Draw(img)
 
-            fnt = ImageFont.truetype('arial.ttf', 38)
+            try:
+                fnt = ImageFont.truetype('arial.ttf', 38)
+            except (OSError, IOError):
+                fnt = ImageFont.load_default()
+                
             d.text((20, 20), "{}".format(self.sentence_to_write), font=fnt, fill=(255, 255, 0))
             img.save("pil_text_font.png")
 
