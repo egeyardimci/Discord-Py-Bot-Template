@@ -26,7 +26,7 @@ class Games(commands.Cog):
     @commands.command(name="writinggame")
     async def writing_game(self, ctx):
         if self.is_game_active == 0:
-            self.sentence_to_write = self.sentences[random.randint(0, len(self.sentences))]
+            self.sentence_to_write = random.choice(self.sentences)
 
             img = Image.new('RGB', (1600, 80), color=(73, 109, 137))
             d = ImageDraw.Draw(img)
