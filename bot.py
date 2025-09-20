@@ -5,11 +5,11 @@ import settings
 intents = discord.Intents.all()
 cogs: list = ["cogs.fun.games", "cogs.fun.gameinfos", "cogs.fun.otherfuncommands", "cogs.info.info",
               "cogs.misc.misc", "cogs.newmember.newmember", "cogs.admin.admin"]
-client = commands.Bot(command_prefix=settings.Prefix, help_command=None, intents=intents)
+client = commands.Bot(command_prefix=settings.BOT_PREFIX, help_command=None, intents=intents)
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game(settings.BotStatus))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game(settings.BOT_STATUS))
     for cog in cogs:
         try:
             print(f"Loading cog {cog}")
@@ -21,4 +21,4 @@ async def on_ready():
             print(f"Loaded cog {cog}")
     print("Bot is ready!")
 
-client.run(settings.TOKEN)
+client.run(settings.DISCORD_BOT_TOKEN)

@@ -3,7 +3,7 @@ FROM python:3.10.11-alpine3.17
 WORKDIR /app
 
 # Set an environment variable for the bot key
-ENV TOKEN="YOUR_BOT_TOKEN"
+ENV DISCORD_BOT_TOKEN="YOUR_BOT_TOKEN"
 
 # Disable Python output buffering
 ENV PYTHONUNBUFFERED=1
