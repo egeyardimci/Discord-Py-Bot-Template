@@ -27,15 +27,15 @@ pip install -r requirements.txt
 
 ### Setting up the bot properties
 
+Set .env file with the values in .env.example
+You can get your bot token from discords developer page
+
 ```python
-#Insert the token which you can get from Discord's developer page.
-TOKEN = ''
-
-#Set the bot status below.
-BotStatus = "Example Bot"
-
-#Set your bots prefix.
-Prefix = "."
+DISCORD_BOT_TOKEN=your_token_here
+BOT_STATUS="Example Bot Status"
+BOT_PREFIX="."
+BOT_NAME="Example Bot"
+BOT_AUTHOR="Your Name"
 ```
 
 # How to run
