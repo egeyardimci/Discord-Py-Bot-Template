@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from settings import BOT_NAME
 
 class GameInfos(commands.Cog):
     def __init__(self, bot):
@@ -14,7 +15,7 @@ class GameInfos(commands.Cog):
         await ctx.send(f"Your Minecraft profile : {url}")
 
         minecraft_table = discord.Embed(
-            title="BotName",
+            title=BOT_NAME,
             colour=discord.Colour.gold()
         )
 

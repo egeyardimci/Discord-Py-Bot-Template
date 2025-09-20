@@ -7,3 +7,5 @@ dotenv.load_dotenv()
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Discord bot token from environment variable
 BOT_STATUS = os.getenv("BOT_STATUS", "Example Bot")  # Status text of the bot
 BOT_PREFIX = os.getenv("BOT_PREFIX", ".")  # Command prefix
+BOT_NAME = os.getenv("BOT_NAME", "Example Bot")  # Bot name
+BOT_AUTHOR = os.getenv("BOT_AUTHOR", "YourName")  # Bot author
