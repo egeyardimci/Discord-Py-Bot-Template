@@ -1,3 +1,4 @@
+import os
 import random
 from PIL import Image, ImageDraw
 from PIL import ImageFont
@@ -41,6 +42,10 @@ class Games(commands.Cog):
 
             await ctx.send("Sentence you need to write : ")
             await ctx.send(file=discord.File("pil_text_font.png"))
+            
+            # Clean up the image file after sending
+            # TODO: Find a better way to handle temporary files
+            os.remove("pil_text_font.png")
 
             self.is_game_active = 1
         else:
