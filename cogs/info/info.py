@@ -21,7 +21,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def avatar(self, ctx):
-        await ctx.send(ctx.author.avatar_url)
+        await ctx.send(ctx.author.display_avatar.url)
 
     @commands.command()
     async def help(self, ctx):
