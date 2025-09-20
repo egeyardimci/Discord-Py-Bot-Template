@@ -2,7 +2,11 @@ import discord
 from discord.ext import commands
 import settings
 
+# You can also use discord.Intents.default() and then enable the ones you need
+# Look at the discord.py documentation for more information on intents
+# https://discordpy.readthedocs.io/en/stable/intents.html
 intents = discord.Intents.all()
+
 cogs: list = ["cogs.fun.games", "cogs.fun.gameinfos", "cogs.fun.otherfuncommands", "cogs.info.info",
               "cogs.misc.misc", "cogs.newmember.newmember", "cogs.admin.admin"]
 client = commands.Bot(command_prefix=settings.BOT_PREFIX, help_command=None, intents=intents)
