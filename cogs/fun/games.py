@@ -7,6 +7,8 @@ from discord.ext import commands
 
 """
 Implements a basic fast writing game with images.
+TODO: This implementation has a global state issue where only one game can be active at a time across all servers. 
+This should be fixed by managing game state per guild/server.
 """
 class Games(commands.Cog):
     def __init__(self, bot):
