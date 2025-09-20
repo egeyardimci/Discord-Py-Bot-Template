@@ -1,15 +1,19 @@
 import discord
+import logging
 from discord.ext import commands
 from settings import BOT_NAME, BOT_AUTHOR
+
+logger = logging.getLogger(__name__)
 
 class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self._last_member = None
+        logger.info("Info cog initialized")
 
     @commands.command()
     async def info(self, ctx):
-        print("init")
+        logger.info(f"Info command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
         info_board = discord.Embed(
             title=BOT_NAME,
             description="This bot made with the egeyardimci bot template.",
@@ -22,10 +26,12 @@ class Info(commands.Cog):
 
     @commands.command()
     async def avatar(self, ctx):
+        logger.info(f"Avatar command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
         await ctx.send(ctx.author.display_avatar.url)
 
     @commands.command()
     async def help(self, ctx):
+        logger.info(f"Help command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
         info_board = discord.Embed(
             title=BOT_NAME,
             colour=discord.Colour.blue()
