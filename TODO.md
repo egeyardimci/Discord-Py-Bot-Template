@@ -1,11 +1,6 @@
-# TODO - Critical Issues
+# TODO
 
-### **Global State Race Condition**
-
-- **File**: `cogs/fun/games.py:15-24`
-- **Issue**: Class-level `is_game_active` shared across all servers
-- **Impact**: Game state conflicts in multi-server deployments
-- **Fix**: Use per-guild game state management
+## Critical Issues
 
 ## Minor Issues
 
