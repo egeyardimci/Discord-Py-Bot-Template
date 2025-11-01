@@ -6,13 +6,13 @@ from settings import BOT_NAME, BOT_AUTHOR
 logger = logging.getLogger(__name__)
 
 class Info(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
         self._last_member = None
         logger.info("Info cog initialized")
 
     @commands.command()
-    async def info(self, ctx):
+    async def info(self, ctx: commands.Context):
         logger.info(f"Info command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
         info_board = discord.Embed(
             title=BOT_NAME,
@@ -25,12 +25,12 @@ class Info(commands.Cog):
         await ctx.send(embed=info_board)
 
     @commands.command()
-    async def avatar(self, ctx):
+    async def avatar(self, ctx: commands.Context):
         logger.info(f"Avatar command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
         await ctx.send(ctx.author.display_avatar.url)
 
     @commands.command()
-    async def help(self, ctx):
+    async def help(self, ctx: commands.Context):
         logger.info(f"Help command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
         info_board = discord.Embed(
             title=BOT_NAME,
@@ -51,5 +51,5 @@ class Info(commands.Cog):
         info_board.add_field(name=".wiki", value='Send you the wiki link of requested thing.', inline=False)
         await ctx.send(embed=info_board)
 
-async def setup(bot):
+async def setup(bot: commands.Bot):
     await bot.add_cog(Info(bot))

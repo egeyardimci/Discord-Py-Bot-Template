@@ -16,7 +16,7 @@ This should be fixed by managing game state per guild/server.
 """
 class Games(commands.Cog):
     
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
         self.is_game_active_per_guild = defaultdict(bool)
         self.sentences_to_write_per_guild = defaultdict(str)
@@ -26,12 +26,12 @@ class Games(commands.Cog):
     sentences = ["sent1", "sent2", "sent3"]
 
     @commands.Cog.listener()
-    async def on_message(self, ctx: commands.Context):
-        if self.is_game_active_per_guild[ctx.guild.id]:
-            if self.sentences_to_write_per_guild[ctx.guild.id] == ctx.content:
-                logger.info(f"Writing game won by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
-                await ctx.channel.send(f"{ctx.author} won the game !")
-                self.is_game_active_per_guild[ctx.guild.id] = False
+    async def on_message(self, message: discord.Message):
+        if self.is_game_active_per_guild[message.guild.id]:
+            if self.sentences_to_write_per_guild[message.guild.id] == message.content:
+                logger.info(f"Writing game won by {message.author} in {message.guild.name if message.guild else 'DM'}")
+                await message.channel.send(f"{message.author} won the game !")
+                self.is_game_active_per_guild[message.guild.id] = False
 
     @commands.command(name="writinggame")
     async def writing_game(self, ctx: commands.Context):

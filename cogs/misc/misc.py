@@ -5,18 +5,18 @@ import logging
 logger = logging.getLogger(__name__)
 
 class Misc(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
         logger.info("Misc cog initialized")
 
     @commands.command()
-    async def wiki(self, ctx, msg):
+    async def wiki(self, ctx: commands.Context, msg: str):
         logger.info(f"Wiki command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'} for: {msg}")
         url = f"https://en.wikipedia.org/wiki/{msg}"
         await ctx.send(f"Here : {url}")
 
     @commands.command(name="breakethesentence")
-    async def brake_the_sentence(self, ctx, *, msg):
+    async def brake_the_sentence(self, ctx: commands.Context, *, msg: str):
         logger.info(f"Break sentence command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
         vowels = ["a", "A", "e", "E", "u", "U", "o", "O", "i", "I"]
         k = -1
@@ -28,7 +28,7 @@ class Misc(commands.Cog):
         await ctx.send(f"The Broken Sentence {msg}")
 
     @commands.command()
-    async def length(self, ctx, *, msg):
+    async def length(self, ctx: commands.Context, *, msg: str):
         logger.info(f"Length command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'}")
         length = len(msg)
         count = 0
@@ -42,7 +42,7 @@ class Misc(commands.Cog):
         await ctx.send(f"World count : {word}, letter count : {letter}")
 
     @commands.command(name="howoldiam")
-    async def how_old_i_am(self, ctx, year):
+    async def how_old_i_am(self, ctx: commands.Context, year: str):
         logger.info(f"Age calculation command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'} with year: {year}")
         now = datetime.date.today().year
         try:

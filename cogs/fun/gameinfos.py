@@ -6,7 +6,7 @@ from settings import BOT_NAME
 logger = logging.getLogger(__name__)
 
 class GameInfos(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
         logger.info("GameInfos cog initialized")
 
@@ -14,7 +14,7 @@ class GameInfos(commands.Cog):
     Gets user's minecraft profile link.
     """
     @commands.command()
-    async def minecraft(self, ctx, name):
+    async def minecraft(self, ctx: commands.Context, name: str):
         logger.info(f"Minecraft command used by {ctx.author} in {ctx.guild.name if ctx.guild else 'DM'} for username: {name}")
         url = f"https://namemc.com/profile/{name}.1"
         await ctx.send(f"Your Minecraft profile : {url}")
@@ -31,5 +31,5 @@ class GameInfos(commands.Cog):
                                   value=f'/give @p minecraft:skull 1 3 {p1}SkullOwner:"{name}"{p2}', inline=False)
         await ctx.send(embed=minecraft_table)
 
-async def setup(bot):
+async def setup(bot: commands.Bot):
     await bot.add_cog(GameInfos(bot))
