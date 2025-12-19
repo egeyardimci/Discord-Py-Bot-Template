@@ -23,9 +23,9 @@ This project aims to help beginners learn Discord bot development, so contributi
 
 1. **Fork the repository**
 
-2. **Create a branch**
+2. **Create a branch** (see [Branch Naming Convention](#branch-naming-convention) below)
    ```bash
-   git checkout -b feature/your-feature-name
+   git checkout -b feat/your-feature-name
    ```
 
 3. **Make your changes**
@@ -38,14 +38,14 @@ This project aims to help beginners learn Discord bot development, so contributi
    - Make sure the bot runs without errors
    - Test your new features/commands
 
-5. **Commit your changes**
+5. **Commit your changes** (see [Commit Message Convention](#commit-message-convention) below)
    ```bash
-   git commit -m "Add: brief description of your changes"
+   git commit -m "feat: add user authentication command"
    ```
 
 6. **Push to your fork**
    ```bash
-   git push origin feature/your-feature-name
+   git push origin feat/your-feature-name
    ```
 
 7. **Open a Pull Request**
@@ -73,6 +73,91 @@ This project aims to help beginners learn Discord bot development, so contributi
 - Add comments explaining what code does (remember, beginners will read this!)
 - Follow PEP 8 style guidelines
 - Keep functions simple and focused
+
+## Commit Message Convention
+
+This project follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+
+### Format
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+### Types
+
+| Type | Description |
+|------|-------------|
+| `feat` | A new feature |
+| `fix` | A bug fix |
+| `docs` | Documentation only changes |
+| `style` | Changes that don't affect code meaning (formatting, whitespace) |
+| `refactor` | Code change that neither fixes a bug nor adds a feature |
+| `perf` | Performance improvement |
+| `test` | Adding or correcting tests |
+| `build` | Changes to build system or dependencies |
+| `ci` | Changes to CI configuration files and scripts |
+| `chore` | Other changes that don't modify src or test files |
+
+### Examples
+
+```bash
+feat: add new /ban command
+fix: resolve memory leak in event handler
+docs: update README with setup instructions
+feat(commands): add user profile lookup
+fix!: change API response format
+```
+
+### Breaking Changes
+
+Indicate breaking changes by:
+- Adding `!` after the type/scope: `feat!: change command prefix`
+- Adding a `BREAKING CHANGE:` footer in the commit body
+
+## Branch Naming Convention
+
+This project follows the [Conventional Branch](https://conventional-branch.github.io/) naming convention.
+
+### Format
+
+```
+<type>/<description>
+```
+
+### Branch Types
+
+| Prefix | Purpose | Example |
+|--------|---------|---------|
+| `feat/` | New features | `feat/add-moderation-commands` |
+| `fix/` | Bug fixes | `fix/reaction-handler-crash` |
+| `hotfix/` | Urgent production fixes | `hotfix/security-vulnerability` |
+| `docs/` | Documentation updates | `docs/update-readme` |
+| `refactor/` | Code refactoring | `refactor/simplify-event-handlers` |
+| `test/` | Test additions/changes | `test/add-command-tests` |
+| `chore/` | Maintenance tasks | `chore/update-dependencies` |
+| `release/` | Release preparation | `release/v1.2.0` |
+
+### Naming Rules
+
+- Use **lowercase letters**, numbers, and hyphens only
+- Use hyphens to separate words: `feat/add-new-command`
+- Keep descriptions concise but descriptive
+- Include issue numbers when applicable: `feat/issue-123-add-logging`
+- No consecutive, leading, or trailing hyphens
+
+### Examples
+
+```bash
+git checkout -b feat/add-music-player
+git checkout -b fix/command-cooldown-bug
+git checkout -b docs/api-documentation
+git checkout -b chore/upgrade-discord-py
+```
 
 ## Questions?
 
