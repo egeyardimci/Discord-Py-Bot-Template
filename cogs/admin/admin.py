@@ -22,5 +22,12 @@ class Admin(commands.Cog):
         logger.info(f"Giveaway winner selected: {winner}")
         await ctx.send(f"Winner: {winner.mention}")
 
+    @giveaway.error
+    async def giveaway_error(self, ctx: commands.Context, error):
+        if isinstance(error, commands.MissingPermissions):
+            await ctx.send("Missing Permissions (Needing Administrator Permissions)")
+        else:
+            logger.error(error)
+
 async def setup(bot: commands.Bot):
     await bot.add_cog(Admin(bot))
